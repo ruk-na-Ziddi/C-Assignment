@@ -468,3 +468,38 @@ void test_vv(){
 	char initial_value='q';
 	assertEqual(reduce_char(array,length,initial_value,greatest_char), 'q');
 }
+
+char *largest_string(char *a,char *b){
+	return (strlen(a)>strlen(b))?a:b;
+}
+
+void test_ww(){
+	char *array[] = {"aa","bbb","ccc","dddd","eeeeee"};
+	int length=5;
+	char *initial_Value = "";
+	assertEqual(strcmp(reduce_string(array,length,initial_Value,largest_string),"eeeeee"),0);
+}
+
+void test_xx(){
+	char *str = "ankur";
+	char *substr = "nku";
+	assertEqual(indexOf(str,substr),1);
+}
+
+void test_yy(){
+	char *str = "ankur";
+	char *substr = "ku";
+	assertEqual(indexOf(str,substr),2);
+}
+
+void test_zz(){
+	char *str = "helloloo";
+	char *substr = "loo";
+	assertEqual(indexOf(str,substr),5);
+}
+
+void test_aaa(){
+	char *str = "hello";
+	char *substr = "kk";
+	assertEqual(indexOf(str,substr),-1);
+}

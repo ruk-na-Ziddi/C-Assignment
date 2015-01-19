@@ -21,3 +21,5 @@ int filter_string(char **array,int length,char **result_array,int (*fn)(char *))
 int reduce_int(int *array,int length,int initial_value,int (*fn)(int,int));
 float reduce_float(float *array,int length,float initial_value,float (*fn)(float,float));
 char reduce_char(char *array,int length,char initial_value,char (*fn)(char,char));
+char *reduce_string(char **array,int length,char *initial_value,char *(*fn)(char *,char *));
+int indexOf(char *str,char *substr);

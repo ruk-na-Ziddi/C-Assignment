@@ -268,3 +268,25 @@ float reduce_float(float *array,int length,float initial_value,float (*fn)(float
 	}
 	return return_value;
 }
+
+char *reduce_string(char **array,int length,char *initial_value,char *(*fn)(char *,char *)){
+	int i;
+	for(i=0;i<length;i++){ 
+		initial_value = fn(initial_value,array[i]);
+	}
+	return initial_value;
+}
+
+int indexOf(char *str,char *substr){
+	int l1=strlen(str),l2=strlen(substr),i,sub_i=0; 
+	for(i=0;i<l1;i++){
+		if(sub_i>0 && str[i]!=substr[sub_i]){
+			sub_i=0;
+		}
+		if(str[i]==substr[sub_i]){
+			++sub_i;
+			if(sub_i==l2){return (i+1)-l2;}
+		}
+	}
+	return -1;
+}
